@@ -1,4 +1,4 @@
-package com.eugene.weather;
+package com.eugene.weather.Fragment;
 
 
 import android.os.Bundle;
@@ -13,12 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eugene.weather.Model.WeatherResult;
+import com.eugene.weather.R;
 import com.eugene.weather.Retrofit.IOpenWeatherMap;
 import com.eugene.weather.Retrofit.RetrofitClient;
 import com.eugene.weather.Сommon.Common;
 import com.squareup.picasso.Picasso;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
