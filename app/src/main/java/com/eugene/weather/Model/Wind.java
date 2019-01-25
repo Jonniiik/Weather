@@ -22,4 +22,8 @@ public class Wind {
     public void setDeg(double deg) {
         this.deg = deg;
     }
+
+//    public String toString(){
+//        return new StringBuilder("").append(this.deg).append(',').append(this.speed).toString();
+//    }
 }
