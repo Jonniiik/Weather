@@ -1,53 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent">
 
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/border"
-        android:padding="16dp"
-        android:stretchColumns="*"
-        tools:ignore="MissingConstraints">
-
-        <TableRow
+        <TextView
+            android:id="@+id/dataName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="dayName" />
 
-            <ImageView
-                android:id="@+id/imageWeather"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/cell"
-                android:src="@drawable/weather" />
+        <ImageView
+            android:id="@+id/imageWeather"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/weather" />
 
-            <TextView
-                android:id="@+id/dataName"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cell"
-                android:text="dayName" />
+        <TextView
+            android:id="@+id/textTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Temperature" />
 
-            <TextView
-                android:id="@+id/textTemperature"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/cell"
-                android:text="Temperature" />
-            <TextView
-                android:id="@+id/textCityName"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="5dp"
-                android:text="City" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell"/>
+
+    </LinearLayout>
 
 
-        </TableRow>
+    <!--<TableLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:background="@drawable/border"-->
+    <!--android:padding="16dp"-->
+    <!--android:stretchColumns="*"-->
+    <!--tools:ignore="MissingConstraints">-->
 
-    </TableLayout>
+    <!--<TableRow-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
 
-</android.support.constraint.ConstraintLayout>
+    <!--<ImageView-->
+    <!--android:id="@+id/imageWeather"-->
+    <!--android:layout_width="30dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:background="@drawable/cell"-->
+    <!--android:src="@drawable/weather" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/dataName"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/cell"-->
+    <!--android:text="dayName" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textTemperature"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:background="@drawable/cell"-->
+    <!--android:text="Temperature" />-->
+    <!--<TextView-->
+    <!--android:id="@+id/textCityName"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:text="City" />-->
+
+
+    <!--</TableRow>-->
+
+    <!--</TableLayout>-->
+
+</LinearLayout>

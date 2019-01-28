@@ -87,7 +87,7 @@ public class TodayFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
         recyclerViewForecast = (RecyclerView) view.findViewById(R.id.recyclerViewForecast);
         recyclerViewForecast.setHasFixedSize(true);
-        recyclerViewForecast.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerViewForecast.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         swipeRefreshToday = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshToday);
         swipeRefreshToday.setOnRefreshListener(this);
@@ -196,10 +196,9 @@ public class TodayFragment extends Fragment implements SwipeRefreshLayout.OnRefr
             @Override
             public void run() {
                 swipeRefreshToday.setRefreshing(false);
-                // Common.current_location = null;
                 getWeatherInfo();
                 getForecastInfo();
             }
-        }, 5000);
+        }, 3000);
     }
 }

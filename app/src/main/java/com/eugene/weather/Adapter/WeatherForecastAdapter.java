@@ -14,6 +14,8 @@ import com.eugene.weather.R;
 import com.eugene.weather.Сommon.Common;
 import com.squareup.picasso.Picasso;
 
+import static java.lang.String.valueOf;
+
 public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecastAdapter.MyViewHolder> {
 
     Context context;
@@ -39,9 +41,8 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
 
         holder.dataName.setText(new StringBuilder(Common.convertUnixToDate2(weatherForecastResult.list.get(i).dt)));
 
-        holder.textTemperature.setText(new StringBuilder(String.valueOf(weatherForecastResult.list.get(i).main.getTemp())).append(" °C"));
-
-        holder.textCityName.setText(new StringBuilder(weatherForecastResult.city.name));
+        //holder.textTemperature.setText(new StringBuilder(String.valueOf(weatherForecastResult.list.get(i).main.getTemp())).append(" °C "));
+        holder.textTemperature.setText(new StringBuilder(valueOf(Integer.valueOf((int) weatherForecastResult.list.get(i).main.getTemp()))).append(" °C "));
     }
 
     @Override
@@ -52,6 +53,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView dataName, textTemperature, textCityName;
         ImageView imageWeather;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -59,7 +61,6 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
             imageWeather = (ImageView) itemView.findViewById(R.id.imageWeather);
             dataName = (TextView) itemView.findViewById(R.id.dataName);
             textTemperature = (TextView) itemView.findViewById(R.id.textTemperature);
-            textCityName = (TextView) itemView.findViewById(R.id.textCityName);
 
         }
     }
