@@ -114,14 +114,13 @@ public class TodayFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                         Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/").append(weatherResult.getWeather().get(0).getIcon())
                                 .append(".png").toString()).into(imageWeather);
 
-
                         //information weather
                         cityName.setText(weatherResult.getName());
                         Log.e("Test", "cityName");
                         textWind.setText(new StringBuilder(String.valueOf(weatherResult.getWind().getSpeed())).append(" m/s").toString());
                         Log.e("Test", "Wind");
-                        textDescriotion.setText(new StringBuilder("Погода в ").append(weatherResult.getName()).toString());
-                        Log.e("Test", "Descriotion");
+                        textDescriotion.setText(String.valueOf(weatherResult.getWeather().get(0).getDescreption()));
+                        Log.e("Test", "Descriotion " + weatherResult.getWeather().get(0).getDescreption());
                         textTemperature.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getTemp())).append("°C").toString());
                         Log.e("Test", "Temperature");
                         textDataTime.setText(Common.convertUnixToDate(weatherResult.getDt()));

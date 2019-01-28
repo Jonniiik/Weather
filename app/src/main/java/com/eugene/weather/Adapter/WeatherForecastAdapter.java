@@ -43,6 +43,8 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
 
         //holder.textTemperature.setText(new StringBuilder(String.valueOf(weatherForecastResult.list.get(i).main.getTemp())).append(" °C "));
         holder.textTemperature.setText(new StringBuilder(valueOf(Integer.valueOf((int) weatherForecastResult.list.get(i).main.getTemp()))).append(" °C "));
+
+        holder.textDescriptions.setText(new StringBuffer(String.valueOf(weatherForecastResult.list.get(0).weather.get(0).getDescreption())));
     }
 
     @Override
@@ -51,7 +53,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView dataName, textTemperature, textCityName;
+        TextView dataName, textTemperature, textCityName, textDescriptions;
         ImageView imageWeather;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -61,6 +63,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
             imageWeather = (ImageView) itemView.findViewById(R.id.imageWeather);
             dataName = (TextView) itemView.findViewById(R.id.dataName);
             textTemperature = (TextView) itemView.findViewById(R.id.textTemperature);
+            textDescriptions = (TextView) itemView.findViewById(R.id.textDescriptions);
 
         }
     }
