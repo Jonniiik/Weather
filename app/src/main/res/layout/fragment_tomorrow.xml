@@ -8,15 +8,5 @@
     android:gravity="center_horizontal"
     tools:context=".Fragment.TomorrowFragment">
 
-    <Button
-        android:id="@+id/resetLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="316dp"
-        android:text="null location"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </android.support.constraint.ConstraintLayout>

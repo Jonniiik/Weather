@@ -48,15 +48,6 @@ public class TomorrowFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tomorrow, container, false);
 
-        resetLocation = (Button) view.findViewById(R.id.resetLocation);
-        resetLocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Common.current_location.reset();
-                Log.e("Reset", "Reset");
-            }
-        });
-
         return view;
     }
 }
