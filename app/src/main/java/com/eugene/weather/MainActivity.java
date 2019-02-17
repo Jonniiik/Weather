@@ -14,8 +14,8 @@ import android.util.Log;
 import android.support.v7.widget.Toolbar;
 
 import com.eugene.weather.Adapter.ViewPagerAdapter;
-import com.eugene.weather.Fragment.TodayFragment;
-import com.eugene.weather.Fragment.TomorrowFragment;
+import com.eugene.weather.Fragment.OpenWeatherMapFragment;
+import com.eugene.weather.Fragment.DarkSkyFragment;
 import com.eugene.weather.Сommon.Common;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(TodayFragment.getInstance(),"Сегодня");
-        adapter.addFragment(TomorrowFragment.getInstance(), "Завтра");
+        adapter.addFragment(OpenWeatherMapFragment.getInstance(),"Сегодня");
+        adapter.addFragment(DarkSkyFragment.getInstance(), "Завтра");
         viewPager.setAdapter(adapter);
     }
 

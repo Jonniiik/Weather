@@ -86,4 +86,8 @@ public class WeatherResultDarkSky {
     public void setOffset(long offset) {
         this.offset = offset;
     }
+    @Override
+    public String toString() {
+        return new StringBuilder("[").append(this.latitude).append(',').append(this.longitude).append(']').toString();
+    }
 }

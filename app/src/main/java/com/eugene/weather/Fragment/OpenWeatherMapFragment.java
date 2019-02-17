@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eugene.weather.Adapter.WeatherForecastAdapter;
+import com.eugene.weather.Model.Weather;
 import com.eugene.weather.Model.WeatherForecastResult;
 import com.eugene.weather.Model.WeatherResult;
 import com.eugene.weather.R;
@@ -33,7 +34,7 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 
 
-public class TodayFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class OpenWeatherMapFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     ImageView imageWeather;
     TextView cityName, textTemperature, textDescriotion, textDataTime, textWind, textPressure, textHumidity, textSunrise, textSunset, textGeoCords;
@@ -46,16 +47,16 @@ public class TodayFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
     private SwipeRefreshLayout swipeRefreshToday;
 
-    static TodayFragment instance;
+    static OpenWeatherMapFragment instance;
 
-    public static TodayFragment getInstance() {
+    public static OpenWeatherMapFragment getInstance() {
         if (instance == null) {
-            instance = new TodayFragment();
+            instance = new OpenWeatherMapFragment();
         }
         return instance;
     }
 
-    public TodayFragment() {
+    public OpenWeatherMapFragment() {
         compositeDisposable = new CompositeDisposable();
         Retrofit retrofit = RetrofitClient.getInstance();
         mService = retrofit.create(IOpenWeatherMap.class);

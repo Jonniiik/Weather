@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:gravity="center_horizontal"
-    tools:context=".Fragment.TodayFragment">
+    tools:context=".Fragment.OpenWeatherMapFragment">
     <!--android:visibility="gone"-->
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshToday"

@@ -1,9 +1,11 @@
 package com.eugene.weather.Model;
 
+import android.util.Log;
+
 public class Weather {
     private int id;
     private String main;
-    private String descreption;
+    private String description;
     private String icon;
 
     public Weather() {
@@ -26,11 +28,13 @@ public class Weather {
     }
 
     public String getDescreption() {
-        return descreption;
+        return description;
+
     }
 
+
     public void setDescreption(String descreption) {
-        this.descreption = descreption;
+        this.description = descreption;
     }
 
     public String getIcon() {
