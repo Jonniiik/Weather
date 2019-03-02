@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onLocationResult(locationResult);
 
                 Common.current_location = locationResult.getLastLocation();
-
+                Log.e("location", String.valueOf(Common.current_location));
                 viewPager = (ViewPager) findViewById(R.id.viewPager);
                 setupViewPager(viewPager);
                 tabs = (TabLayout) findViewById(R.id.tabs);

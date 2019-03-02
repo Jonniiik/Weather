@@ -12,20 +12,20 @@ public class Common {
 
     public static String convertUnixToDate(long dt) {
         Date date = new Date(dt*1000L);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE DD MM yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE dd.MM.yyyy");
         String formatted = simpleDateFormat.format(date);
         return formatted;
     }
     public static String convertUnixToDate2(long dt) {
         Date date = new Date(dt*1000L);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:00 DD MM");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:00 dd.MM");
         String formatted = simpleDateFormat.format(date);
         return formatted;
     }
 
     public static String convertUnixToDate00(long dt) {
         Date date = new Date(dt*1000L);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:00 EEE DD MM yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:00 EEE dd MM yyyy");
         String formatted = simpleDateFormat.format(date);
         return formatted;
     }
