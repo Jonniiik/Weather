@@ -1,7 +1,5 @@
 package com.eugene.weather.Model;
 
-import android.util.Log;
-
 public class Weather {
     private int id;
     private String main;
