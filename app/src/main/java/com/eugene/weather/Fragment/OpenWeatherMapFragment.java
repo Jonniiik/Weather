@@ -36,7 +36,6 @@ import retrofit2.Retrofit;
 public class
 OpenWeatherMapFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-    ImageView imageWeather;
     TextView cityName, textTemperature, textDescriotion, textDataTime, textWind, textPressure, textHumidity, textSunrise, textSunset, textGeoCords;
     LinearLayout linerLayoutWeatherPanel;
     ProgressBar loading;
@@ -68,8 +67,6 @@ OpenWeatherMapFragment extends Fragment implements SwipeRefreshLayout.OnRefreshL
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_today, container, false);
-
-        imageWeather = (ImageView) view.findViewById(R.id.imageWeather);
 
         cityName = (TextView) view.findViewById(R.id.cityName);
         textTemperature = (TextView) view.findViewById(R.id.textTemperature);
@@ -110,10 +107,6 @@ OpenWeatherMapFragment extends Fragment implements SwipeRefreshLayout.OnRefreshL
                 .subscribe(new Consumer<WeatherResult>() {
                     @Override
                     public void accept(WeatherResult weatherResult) throws Exception {
-
-                        //image add
-                        Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/").append(weatherResult.getWeather().get(0).getIcon())
-                                .append(".png").toString()).into(imageWeather);
 
                         //information weather
                         cityName.setText(weatherResult.getName());

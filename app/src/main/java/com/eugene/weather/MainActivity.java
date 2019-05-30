@@ -7,6 +7,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +32,6 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private Toolbar toolbar;
     private TabLayout tabs;
     private ViewPager viewPager;
 
@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
         rootView = (CoordinatorLayout) findViewById(R.id.rootView);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         Dexter.withActivity(this)
                 .withPermissions(Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -80,14 +80,20 @@ public class MainActivity extends AppCompatActivity {
                 }).check();
     }
 
-    private void buildLocationCallBack(){
-        locationCallback = new LocationCallback(){
+    private void buildLocationCallBack() {
+        locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
 
                 Common.current_location = locationResult.getLastLocation();
                 Log.e("location", String.valueOf(Common.current_location));
+//                OpenWeatherMapFragment openWeatherMapFragment = new OpenWeatherMapFragment();
+//                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.frameContainer, openWeatherMapFragment);
+//                fragmentTransaction.commit();
+
+
                 viewPager = (ViewPager) findViewById(R.id.viewPager);
                 setupViewPager(viewPager);
                 tabs = (TabLayout) findViewById(R.id.tabs);
@@ -101,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(OpenWeatherMapFragment.getInstance(),"OpenWeatherMap");
-        adapter.addFragment(DarkSkyFragment.getInstance(), "DarkSky");
+        adapter.addFragment(OpenWeatherMapFragment.getInstance(), null);
+//        adapter.addFragment(DarkSkyFragment.getInstance(), "DarkSky");
         viewPager.setAdapter(adapter);
     }
 
-    private void buildLocationRequest(){
+    private void buildLocationRequest() {
         locationRequest = new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         locationRequest.setInterval(5000);
